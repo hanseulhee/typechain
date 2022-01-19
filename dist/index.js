@@ -1,6 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const sayHi = (name, age, gender) => {
-    console.log(`Hello ${name}, You are ${age}, You are a ${gender}`);
+class Human {
+    constructor(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+}
+const lynn = new Human("Lynn", 18, "female");
+const sayHi = (person) => {
+    return `Hello ${person.name}, You are ${person.age}, You are a ${person.gender}`;
 };
-sayHi("seulhee", 22, "female");
+console.log(sayHi(lynn));

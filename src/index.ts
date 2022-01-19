@@ -1,7 +1,19 @@
-const sayHi = (name:string, age:number, gender:string) => {
-    console.log(`Hello ${name}, You are ${age}, You are a ${gender}`);
+class Human{
+    public name: string;
+    public age: number;
+    public gender: string;
+    constructor(name: string, age: number, gender: string){
+        this.name = name;
+        this.age = age;
+        this.gender = gender
+    }
+}
+
+const lynn = new Human("Lynn", 18, "female")
+const sayHi = (person:Human): string => {
+    return `Hello ${person.name}, You are ${person.age}, You are a ${person.gender}`;
 };
 
-sayHi("seulhee", 22, "female");
+console.log(sayHi(lynn));
 
 export {}
