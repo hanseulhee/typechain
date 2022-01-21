@@ -65,3 +65,8 @@ console.log(sayHi(lynn));
 ### Constructor
 
 생성자(Constructor)는 메소드인데 클래스가 시작할 때마다 호출된다. (클래스로부터 객체를 만들 때)
+
+
+### Hash
+
+해쉬는 모든 속성을 수학적으로 이상한 하나의 문자열로 결합한 것이다.
