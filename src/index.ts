@@ -8,7 +8,7 @@ class Block{
         timestamp: number, 
         data: string
         ):string => 
-        CryptoJS.SHA256(index + previousHash + timestamp +data).toString();
+        CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
 
     static validateStructure = (aBlock: Block) : boolean => 
     typeof aBlock.index === "number" && 
@@ -41,13 +41,13 @@ class Block{
 
 
 const genesisBlock: Block = new Block(0, "2020202020202", "", "Hello", 123456);
-let blockchain: [Block] = [genesisBlock]
+let blockchain: Block[] = [genesisBlock];
 
 const getBlockchain = () : Block[] => blockchain;// Block 배열을 리턴한다.
 
-const getLatestBlock = () : Block => blockchain[blockchain.length -1]
+const getLatestBlock = () : Block => blockchain[blockchain.length -1];
 
-const getNewTimeStamp = () : number => Math.round(new Date().getTime() / 1000)
+const getNewTimeStamp = () : number => Math.round(new Date().getTime() / 1000);
 
 const createNewBlock = (data:string): Block => {
     const previousBlock: Block = getLatestBlock();
@@ -62,6 +62,7 @@ const createNewBlock = (data:string): Block => {
         data, 
         newTimestamp
     );
+    addBlock(newBlock)
     return newBlock;
 
 }
@@ -89,5 +90,11 @@ const addBlock = (candidateBlock: Block) : void => {
         blockchain.push(candidateBlock);
     }
 }
+
+createNewBlock("second block");
+createNewBlock("third block");
+createNewBlock("fourth block");
+
+console.log(blockchain);
 
 export {}
