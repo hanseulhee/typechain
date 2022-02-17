@@ -1,5 +1,7 @@
 # Typechain
 
+[정리](https://github.com/hanseulhee/typechain/tree/master/Docs)
+
 ## Installation
 
 ```js
